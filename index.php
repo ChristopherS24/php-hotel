@@ -61,31 +61,42 @@
             PHP Hotels
         </h1>
 
-        <div class="container">
+        <div>
+
+            <table class="table table-dark table-striped-columns">
+            <thead>
+                <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Parking</th>
+                <th scope="col">Vote</th>
+                <th scope="col">Distance to center</th>
+                </tr>
+            </thead>
+            <tbody>
+
             <?php
                 foreach ($hotels as $hotel) {
             ?>
+
+            <tr>
                 
-            <ul>    
-                <li>
-                    Name: <?php echo $hotel['name']; ?>
-                </li>
-                <li>
-                    Description: <?php echo $hotel['description']; ?>
-                </li>
-                <li>
-                    Parking: <?php echo ($hotel['parking'] ? 'Si' : 'No'); ?>
-                </li>
-                <li>
-                    Vote: <?php echo $hotel['vote']; ?>
-                </li>
-                <li>
-                    Distance to center: <?php echo $hotel['distance_to_center']; ?>
-                </li>
-            </ul>
+                <td><?php echo $hotel['name']; ?></td>
+                <td><?php echo $hotel['description']; ?></td>
+                <td><?php echo ($hotel['parking'] ? 'Si' : 'No'); ?></td>
+                <td><?php echo $hotel['vote']; ?></td>
+                <td><?php echo $hotel['distance_to_center']; ?></td>
+                
+            </tr>
+
             <?php
                 }
             ?>
+
+            </tbody>
+            </table>
+
+
         </div>
     </main>
 
