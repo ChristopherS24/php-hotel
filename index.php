@@ -40,8 +40,6 @@
 
     ];
 
-    for ($i = 0; $i < count($hotels); $i++)
-        var_dump($hotels[$i]);
 ?>
 
 
@@ -58,10 +56,36 @@
 </head>
 <body>
     <main>
+
+        <h1>
+            PHP Hotels
+        </h1>
+
         <div class="container">
+            <?php
+                foreach ($hotels as $hotel) {
+            ?>
+                
             <ul>    
-                <li></li>
+                <li>
+                    Name: <?php echo $hotel['name']; ?>
+                </li>
+                <li>
+                    Description: <?php echo $hotel['description']; ?>
+                </li>
+                <li>
+                    Parking: <?php echo ($hotel['parking'] ? 'Si' : 'No'); ?>
+                </li>
+                <li>
+                    Vote: <?php echo $hotel['vote']; ?>
+                </li>
+                <li>
+                    Distance to center: <?php echo $hotel['distance_to_center']; ?>
+                </li>
             </ul>
+            <?php
+                }
+            ?>
         </div>
     </main>
 
